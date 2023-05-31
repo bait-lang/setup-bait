@@ -10,7 +10,7 @@ async function run() {
 		await exec.exec('./bait', ['symlink'])
 
 		core.setOutput('bait-path', './bait')
-		core.setOutput('version', '0.0.1') // TODO get dynamically
+		core.setOutput('version', 'x.x.x') // TODO get dynamically
 	} catch (error) {
 		core.setFailed(error.message);
 	}
