@@ -1,0 +1,26 @@
+{
+  "name": "setup-bait-action",
+  "description": "",
+  "author": "tiabeast",
+  "version": "0.0.1-dev",
+  "license": "MPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiabeast/setup-bait-action.git"
+  },
+  "engines": {
+    "node": "16 || >=18"
+  },
+  "main": "src/setup-bait.js",
+  "scripts": {
+    "prepare": "ncc build src/setup-bait.js -o dist --source-map --license licenses.txt",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/exec": "^1.1.1"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.36.1"
+  }
+}

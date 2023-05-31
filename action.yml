@@ -1,0 +1,10 @@
+name: Setup Bait
+description: Sets up Bait for use in GitHub workflows
+outputs:
+  bait-path:
+    description: Path to the Bait executable
+  version:
+    description: The installed Bait version
+runs:
+  using: node16
+  main: dist/index.js
