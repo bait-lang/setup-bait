@@ -13,7 +13,7 @@
   },
   "main": "src/setup-bait.js",
   "scripts": {
-    "prepare": "ncc build src/setup-bait.js --minify --source-map --license licenses.txt",
+    "package": "ncc build src/setup-bait.js --minify --source-map --license licenses.txt",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
