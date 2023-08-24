@@ -11,7 +11,7 @@ async function run() {
 			await exec.exec('./bait', ['symlink'])
 		} else if (process.platform === 'win32') {
 			await exec.exec('./make.bat')
-			await exec.exec('./bait.bat', ['symlink'])
+			await exec.exec('./bait.bat', ['symlink', '--ghci-win'])
 		} else {
 			core.setFailed('Unsupported platform: ' + process.platform)
 		}
