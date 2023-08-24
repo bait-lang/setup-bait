@@ -9,6 +9,8 @@ async function run() {
 		if (process.platform === 'linux') {
 			await exec.exec('./make.sh')
 			await exec.exec('./bait', ['symlink'])
+		} else if (process.platform === 'win32') {
+			// TODO
 		} else {
 			core.setFailed('Unsupported platform: ' + process.platform)
 		}

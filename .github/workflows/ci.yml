@@ -13,6 +13,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v3
+    - name: Rebuild the dist directory
+      run: npm run package
     - name: Run Action
       uses: ./
     - run: bait version
