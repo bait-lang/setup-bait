@@ -3,7 +3,7 @@ GitHub Action to setup Bait for use in workflows.
 
 ## Usage
 ```yaml
-- uses: tiabeast/setup-bait
+- uses: tiabeast/setup-bait@main
 ```
 
 ## License
