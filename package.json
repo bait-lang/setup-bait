@@ -11,6 +11,7 @@
   "engines": {
     "node": "16 || >=18"
   },
+  "packageManager": "pnpm@*",
   "main": "src/setup-bait.js",
   "scripts": {
     "package": "ncc build src/setup-bait.js --minify --source-map --license licenses.txt",
