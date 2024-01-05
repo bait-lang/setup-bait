@@ -14,6 +14,15 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v3
-    - name: Run Action
+    - id: bait_setup
+      name: Run Action
       uses: ./
-    - run: bait version
+    - run:
+    - name: Check output
+      run: |
+        echo "Action output is ${{ steps.bait_setup.outputs.version }}"
+        BAIT_VERSION=$(bait version)
+        if [ "${{ steps.bait_setup.outputs.version }}" != "$BAIT_VERSION" ]; then
+          echo "Output does not match expected value"
+          exit 1
+        fi

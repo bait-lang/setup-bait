@@ -1,10 +1,17 @@
 # Setup Bait
 GitHub Action to setup Bait for use in workflows.
 
+
 ## Usage
 ```yaml
 - uses: tiabeast/setup-bait@main
 ```
+
+
+## Outputs
+The action has the following output variables:
+- `version`: Version of Bait that was installed
+
 
 ## License
 This repository is licensed under the Mozilla Public License (`MPL-2.0`).
