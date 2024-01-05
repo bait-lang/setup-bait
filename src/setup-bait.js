@@ -11,13 +11,26 @@ async function run() {
 			await exec.exec('./bait', ['symlink'])
 		} else if (process.platform === 'win32') {
 			await exec.exec('./make.bat')
-			await exec.exec('./bait.bat', ['symlink', '--ghci-win'])
+			await core.addPath('./bait.bat')
 		} else {
 			core.setFailed('Unsupported platform: ' + process.platform)
 		}
 
-		core.setOutput('bait-path', './bait.bat')
-		core.setOutput('version', 'x.x.x') // TODO get dynamically
+		let output = ''
+		const options = {
+			listeners: {
+				stdout: (data) => {
+					output += data.toString()
+				}
+			}
+		}
+
+		process.chdir('..')
+
+		// Set version output
+		await exec.exec('bait', ['version'], options)
+		core.setOutput('version', output)
+		output = ''
 	} catch (error) {
 		core.setFailed(error.message)
 	}
