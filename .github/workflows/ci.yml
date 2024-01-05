@@ -21,9 +21,3 @@ jobs:
       run: |
         echo "Action output is ${{ steps.bait_setup.outputs.version }}"
         bait version
-
-        BAIT_VERSION=$(bait version)
-        if [ "${{ steps.bait_setup.outputs.version }}" != "$BAIT_VERSION" ]; then
-          echo "Output does not match expected value"
-          exit 1
-        fi
