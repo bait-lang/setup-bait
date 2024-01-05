@@ -14,6 +14,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v3
-    - name: Run Action
+    - id: bait_setup
+      name: Run Action
       uses: ./
-    - run: bait version
+    - name: Check output
+      run: |
+        echo "Action output is ${{ steps.bait_setup.outputs.version }}"
+        bait version
