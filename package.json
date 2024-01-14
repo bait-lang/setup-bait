@@ -1,12 +1,12 @@
 {
   "name": "setup-bait-action",
   "description": "",
-  "author": "tiabeast",
-  "version": "0.3.0",
+  "author": "bait-lang",
+  "version": "0.4.0",
   "license": "MPL-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tiabeast/setup-bait-action.git"
+    "url": "git+https://github.com/bait-lang/setup-bait-action.git"
   },
   "engines": {
     "node": "16 || >=18"

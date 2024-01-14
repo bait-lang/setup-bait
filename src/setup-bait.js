@@ -6,7 +6,7 @@ const exec = require('@actions/exec')
 
 async function run() {
 	try {
-		await exec.exec('git', ['clone', 'https://github.com/tiabeast/bait.git', 'bait'])
+		await exec.exec('git', ['clone', 'https://github.com/bait-lang/bait.git', 'bait'])
 		process.chdir('bait')
 
 		if (process.platform === 'linux') {
