@@ -2,14 +2,14 @@
   "name": "setup-bait-action",
   "description": "",
   "author": "bait-lang",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "license": "MPL-2.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bait-lang/setup-bait-action.git"
   },
   "engines": {
-    "node": ">=18",
+    "node": ">=20",
 		"pnpm": ">=8"
   },
   "main": "src/setup-bait.js",
