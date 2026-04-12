@@ -1,5 +1,5 @@
-// SPDX-FileCopyrightText: 2023-present Lukas Neubert <lukas.neubert@proton.me>
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-FileCopyrightText: Lukas Neubert <lukas.neubert@proton.me>
+// SPDX-License-Identifier: MIT
 
 const core = require('@actions/core')
 const exec = require('@actions/exec')
