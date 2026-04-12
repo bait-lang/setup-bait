@@ -1,10 +1,10 @@
-// SPDX-FileCopyrightText: Lukas Neubert <lukas.neubert@proton.me>
+// SPDX-FileCopyrightText: Lukas Neubert
 // SPDX-License-Identifier: MIT
 
-const core = require('@actions/core')
-const exec = require('@actions/exec')
+import * as core from '@actions/core'
+import * as exec from '@actions/exec'
 
-async function run() {
+async function run(): Promise<void> {
 	try {
 		await exec.exec('git', ['clone', 'https://github.com/bait-lang/bait.git', 'bait'])
 		process.chdir('bait')
@@ -14,15 +14,16 @@ async function run() {
 			await exec.exec('./bait', ['symlink'])
 		} else if (process.platform === 'win32') {
 			await exec.exec('./make.bat')
-			await core.addPath('./bait')
+			core.addPath('./bait')
 		} else {
 			core.setFailed('Unsupported platform: ' + process.platform)
+			return
 		}
 
 		let output = ''
-		const options = {
+		const options: exec.ExecOptions = {
 			listeners: {
-				stdout: (data) => {
+				stdout: (data: Buffer) => {
 					output += data.toString()
 				}
 			}
@@ -30,13 +31,16 @@ async function run() {
 
 		process.chdir('..')
 
-		// Set version output
+		// Set version output.
 		await exec.exec('bait', ['version'], options)
 		core.setOutput('version', output)
-		output = ''
-	} catch (error) {
-		core.setFailed(error.message)
+	} catch (error: unknown) {
+		if (error instanceof Error) {
+			core.setFailed(error.message)
+		} else {
+			core.setFailed(String(error))
+		}
 	}
 }
 
-run()
+void run()
