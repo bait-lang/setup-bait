@@ -12,6 +12,7 @@ jobs:
         os: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
     steps:
+    - uses: oven-sh/setup-bun@v2
     - uses: actions/checkout@v6
     - id: bait_setup
       name: Run Action
