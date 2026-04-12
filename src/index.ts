@@ -17,7 +17,7 @@ async function run(): Promise<void> {
 			await exec.exec('./make.bat')
 			core.addPath('./bait')
 		} else {
-			core.setFailed('Unsupported platform: ' + process.platform)
+			core.setFailed(`Unsupported platform: ${process.platform}`)
 			return
 		}
 
@@ -26,8 +26,8 @@ async function run(): Promise<void> {
 			listeners: {
 				stdout: (data: Buffer) => {
 					output += data.toString()
-				}
-			}
+				},
+			},
 		}
 
 		process.chdir('..')

@@ -15,8 +15,8 @@ jobs:
     - uses: oven-sh/setup-bun@v2
     - uses: actions/checkout@v6
 
-    - name: Type checking
-      run: bun run check
+    - run: bun run check
+    - run: bun run lint:ci
     - id: bait_setup
       name: Run Action
       uses: ./
