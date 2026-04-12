@@ -4,6 +4,7 @@ GitHub Action to setup Bait for use in workflows.
 
 ## Usage
 ```yaml
+- uses: oven-sh/setup-bun@v2 # Bun is required
 - uses: bait-lang/setup-bait@main
 ```
 
