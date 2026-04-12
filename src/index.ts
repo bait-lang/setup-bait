@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: Lukas Neubert
 // SPDX-License-Identifier: MIT
 
+import process from 'node:process'
 import * as core from '@actions/core'
 import * as exec from '@actions/exec'
 

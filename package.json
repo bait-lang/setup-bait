@@ -9,6 +9,7 @@
     "url": "https://github.com/bait-lang/setup-bait-action"
   },
   "scripts": {
+    "check": "tsgo",
     "package": "bun run scripts/package.ts"
   },
   "engines": {
@@ -20,6 +21,8 @@
     "@actions/exec": "~3.0.0"
   },
   "devDependencies": {
-    "@types/bun": "~1.3.11"
+    "@types/bun": "~1.3.11",
+    "@types/node": "~22.19.17",
+    "@typescript/native-preview": "~7.0.0-dev.20260411.1"
   }
 }

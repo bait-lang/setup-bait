@@ -14,10 +14,13 @@ jobs:
     steps:
     - uses: oven-sh/setup-bun@v2
     - uses: actions/checkout@v6
+
+    - name: Type checking
+      run: bun run check
     - id: bait_setup
       name: Run Action
       uses: ./
-    - name: Check output
+    - name: Verify output
       run: |
         echo "Action output is ${{ steps.bait_setup.outputs.version }}"
         bait version
