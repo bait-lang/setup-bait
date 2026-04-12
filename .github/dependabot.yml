@@ -1,0 +1,23 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "quarterly"
+    cooldown:
+      default-days: 7
+
+  - package-ecosystem: "bun"
+    directory: "/"
+    schedule:
+      interval: "quarterly"
+    cooldown:
+      default-days: 7
+    versioning-strategy: "increase"
+    groups:
+      minor:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"

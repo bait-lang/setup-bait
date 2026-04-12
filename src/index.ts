@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: Lukas Neubert
 // SPDX-License-Identifier: MIT
 
+import process from 'node:process'
 import * as core from '@actions/core'
 import * as exec from '@actions/exec'
 
@@ -16,7 +17,7 @@ async function run(): Promise<void> {
 			await exec.exec('./make.bat')
 			core.addPath('./bait')
 		} else {
-			core.setFailed('Unsupported platform: ' + process.platform)
+			core.setFailed(`Unsupported platform: ${process.platform}`)
 			return
 		}
 
@@ -25,8 +26,8 @@ async function run(): Promise<void> {
 			listeners: {
 				stdout: (data: Buffer) => {
 					output += data.toString()
-				}
-			}
+				},
+			},
 		}
 
 		process.chdir('..')
