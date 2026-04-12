@@ -1,7 +1,7 @@
 import { type BuildConfig, build } from 'bun'
 
 const cfg: BuildConfig = {
-	entrypoints: ['src/index.js'],
+	entrypoints: ['src/index.ts'],
 	minify: true,
 	outdir: 'dist',
 	target: 'node',
